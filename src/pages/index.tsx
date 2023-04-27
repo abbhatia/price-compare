@@ -4,6 +4,7 @@ import Content from "../components/content";
 import Pricing from "../components/pricing";
 import Stats from "../components/stats";
 import Team from "../components/team";
+import { getMessage } from "@/data/getMessage";
 
 export default function Home({ message }: { message: string }) {
   return (
@@ -20,9 +21,10 @@ export default function Home({ message }: { message: string }) {
 }
 
 export async function getServerSideProps() {
+  const message = await getMessage();
   return {
     props: {
-      message: "hello",
+      message,
     },
   };
 }
