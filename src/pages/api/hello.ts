@@ -16,5 +16,5 @@ export default function handler(
   res
     .status(200)
     .setHeader("x-cold-start", `${isCold}`)
-    .json({ name: "John Doe" });
+    .json({ name: "John James" });
 }
